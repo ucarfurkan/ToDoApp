@@ -18,10 +18,12 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @GetMapping({"/",""})
+    @GetMapping({"", "/"})
     public String getAllTodos(Model model){
-        List<Todo> todos = todoService.getAllTodos();
-        model.addAttribute("todos",todos);
+        List<Todo> notDoneTodos = todoService.getAllTodosNotDone();
+        model.addAttribute("todosNotDone",notDoneTodos);
+        List<Todo> doneTodos = todoService.getAllTodosDone();
+        model.addAttribute("todosDone",doneTodos);
         return "index";
     }
 }

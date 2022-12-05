@@ -14,8 +14,14 @@ public class TodoServiceImpl implements TodoService {
     public TodoServiceImpl(TodoRepository todoRepository){
         this.todoRepository = todoRepository;
     }
+
     @Override
-    public List<Todo> getAllTodos() {
-        return todoRepository.findAll();
+    public List<Todo> getAllTodosNotDone() {
+        return todoRepository.findAllNotDone();
+    }
+
+    @Override
+    public List<Todo> getAllTodosDone() {
+        return todoRepository.findAllDone();
     }
 }

@@ -5,5 +5,6 @@ import ucarfurkan.todoapp.ToDoApp.Entities.Todo;
 import java.util.List;
 
 public interface TodoService {
-    List<Todo> getAllTodos();
+    List<Todo> getAllTodosNotDone();
+    List<Todo> getAllTodosDone();
 }

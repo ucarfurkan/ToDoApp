@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,11 +71,11 @@
         </div>
     </div>
     <div class="p-3 m-3">
-        <div class="row mx-auto d-flex align-items-center">
-            <div class="col-4">
+        <div class="row mx-auto d-flex align-items-center" >
+            <div th:each="to_do: ${todosNotDone}" class="col-4">
               <div class=" card mt-3 p-3 text-white bg-card">
                 <div class="card-body">
-                  <p class="todo-content card-text">HIT GYM</p>
+                  <p th:text="${to_do.todo}" class="todo-content card-text">qqwd</p>
                     <div class="row">
                       <div class="col-4">
                         <button type="button" class="btn btn-done w-100">Done</button>
@@ -90,99 +90,16 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-4">
-                <div class="card mt-3 p-3 text-white bg-card">
-                  <div class="card-body">
-                    <p class="todo-content card-text">Lorem ipsum dolor sit amet.</p>
-                      <div class="row">
-                        <div class="col-4">
-                          <button type="button" class="btn btn-done w-100">Done</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-update w-100">Update</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-delete w-100">Delete</button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="card mt-3 p-3 text-white bg-card">
-                  <div class="card-body">
-                    <p class="todo-content card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et sit veniam eligendi!.</p>
-                      <div class="row">
-                        <div class="col-4">
-                          <button type="button" class="btn btn-done w-100">Done</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-update w-100">Update</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-delete w-100">Delete</button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="card mt-3 p-3 text-white bg-card">
-                  <div class="card-body">
-                    <p class="todo-content card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsam provident obcaecati nulla.</p>
-                      <div class="row">
-                        <div class="col-4">
-                          <button type="button" class="btn btn-done w-100">Done</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-update w-100">Update</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-delete w-100">Delete</button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="card mt-3 p-3 text-white bg-card">
-                  <div class="card-body">
-                    <p class="todo-content card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, adipisci. Corrupti nisi tempora temporibus ex delectus ipsa? Beatae, laudantium placeat.</p>
-                      <div class="row">
-                        <div class="col-4">
-                          <button type="button" class="btn btn-done w-100">Done</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-update w-100">Update</button>
-                        </div>
-                        <div class="col-4">
-                          <button type="button" class="btn btn-delete w-100">Delete</button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            
+        </div>
     </div>
     <div class="p-3 m-3">
         <p class="h3 todo-header">DONE</p>
         <hr>
         <div class="row mx-auto d-flex align-items-center">
-            <div class="col-4">
+            <div th:each="to_do2: ${todosDone}" class="col-4">
                 <div class=" card mt-3 p-3 text-white bg-secondary">
                         <div class="card-body">
-                            <p class="todo-content card-text">
-                            <del>&nbsp;HIT GYM&nbsp;</del>
-                            </p>
-                        </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class=" card mt-3 p-3 text-white bg-secondary">
-                        <div class="card-body">
-                            <p class="todo-content card-text">
-                            <del>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, ducimus?&nbsp;</del>
+                            <p th:text="${to_do2.todo}" class="todo-content card-text">
                             </p>
                         </div>
                 </div>
