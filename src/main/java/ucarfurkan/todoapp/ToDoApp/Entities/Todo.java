@@ -9,7 +9,7 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "todo")
-    private String todo;
+    private String todoText;
     @Column(name = "is_done")
     private boolean isDone;
 
@@ -17,7 +17,7 @@ public class Todo {
     }
 
     public Todo(String todo, boolean isDone) {
-        this.todo = todo;
+        this.todoText = todo;
         this.isDone = isDone;
     }
 
@@ -29,19 +29,19 @@ public class Todo {
         this.id = id;
     }
 
-    public String getTodo() {
-        return todo;
+    public String getTodoText() {
+        return todoText;
     }
 
-    public void setTodo(String todo) {
-        this.todo = todo;
+    public void setTodoText(String todoText) {
+        this.todoText = todoText;
     }
 
     public boolean isDone() {
         return isDone;
     }
 
-    public void setDone(boolean done) {
+    public void setIsDone(boolean done) {
         isDone = done;
     }
 }

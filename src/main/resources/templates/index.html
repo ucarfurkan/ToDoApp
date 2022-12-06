@@ -60,22 +60,24 @@
     <div>
         <p class="text-headline display-1 p-5 m-3 d-flex justify-content-center"><u>to do App</u></p>
     </div>
-    <div class="mx-auto w-50">
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg">To do:</span>
+        <form th:action="@{/todos}" method="post" th:object="${newTodo}">
+            <div class="mx-auto w-50">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">To do:</span>
+                        </div>
+                            <input type="text" name="todoText" th:field ="*{todoText}">
+                            <button type="submit" class="btn btn-add ml-1 pl-4 pr-4">Add</button>
+                    </div>
             </div>
-            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            <button type="button" class="btn btn-add ml-1 pl-4 pr-4">Add</button>
-            <button type="button" class="btn btn-reset-all ml-1">Reset All</button>
-        </div>
-    </div>
+        </form>
+
     <div class="p-3 m-3">
         <div class="row mx-auto d-flex align-items-center" >
             <div th:each="to_do: ${todosNotDone}" class="col-4">
               <div class=" card mt-3 p-3 text-white bg-card">
                 <div class="card-body">
-                  <p th:text="${to_do.todo}" class="todo-content card-text">qqwd</p>
+                  <p th:text="${to_do.todoText}" class="todo-content card-text">qqwd</p>
                     <div class="row">
                       <div class="col-4">
                         <button type="button" class="btn btn-done w-100">Done</button>
@@ -99,8 +101,11 @@
             <div th:each="to_do2: ${todosDone}" class="col-4">
                 <div class=" card mt-3 p-3 text-white bg-secondary">
                         <div class="card-body">
-                            <p th:text="${to_do2.todo}" class="todo-content card-text">
+                            <p class="todo-content card-text"><del th:text="${to_do2.todoText}"></del>
                             </p>
+                            <div class="col-4 float-right">
+                                <button type="button" class="btn btn-delete w-100">Delete</button>
+                            </div>
                         </div>
                 </div>
             </div>

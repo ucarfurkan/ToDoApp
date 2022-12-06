@@ -7,4 +7,5 @@ import java.util.List;
 public interface TodoService {
     List<Todo> getAllTodosNotDone();
     List<Todo> getAllTodosDone();
+    void addNewTodo(Todo todo);
 }

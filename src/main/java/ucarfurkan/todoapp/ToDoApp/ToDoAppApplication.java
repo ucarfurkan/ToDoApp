@@ -23,9 +23,9 @@ public class ToDoAppApplication implements CommandLineRunner {
 		todoRepository.save(todo1);
 		Todo todo2= new Todo("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",false);
 		todoRepository.save(todo2);*/
-		Todo todo3= new Todo("qwdqwişdqwşidçqwşiefçöqeiföeşlwmfglşwömgflşr",false);
+/*		Todo todo3= new Todo("qwdqwişdqwşidçqwşiefçöqeiföeşlwmfglşwömgflşr",false);
 		todoRepository.save(todo3);
 		Todo todo4= new Todo("aaaaaa",true);
-		todoRepository.save(todo4);
+		todoRepository.save(todo4);*/
 	}
 }
