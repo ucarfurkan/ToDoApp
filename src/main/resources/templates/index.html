@@ -80,13 +80,15 @@
                   <p th:text="${to_do.todoText}" class="todo-content card-text">qqwd</p>
                     <div class="row">
                       <div class="col-4">
-                        <button type="button" class="btn btn-done w-100">Done</button>
+                          <a class="btn btn-done w-100" th:href="@{/todos/done/{id}(id=${to_do.id})}" th:text="Done"></a>
                       </div>
                       <div class="col-4">
-                        <button type="button" class="btn btn-update w-100">Update</button>
+                        <button type="button" class="btn btn-update w-100">
+                            <a>Update</a>
+                        </button>
                       </div>
                       <div class="col-4">
-                        <button type="button" class="btn btn-delete w-100">Delete</button>
+                          <a class="btn btn-delete w-100" th:href="@{/todos/{id}(id=${to_do.id})}" th:text="Delete"></a>
                       </div>
                     </div>
                 </div>
@@ -104,7 +106,7 @@
                             <p class="todo-content card-text"><del th:text="${to_do2.todoText}"></del>
                             </p>
                             <div class="col-4 float-right">
-                                <button type="button" class="btn btn-delete w-100">Delete</button>
+                                <a class="btn btn-delete w-100" th:href="@{/todos/{id}(id=${to_do2.id})}" th:text="Delete"></a>
                             </div>
                         </div>
                 </div>

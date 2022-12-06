@@ -3,10 +3,7 @@ package ucarfurkan.todoapp.ToDoApp.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import ucarfurkan.todoapp.ToDoApp.Entities.Todo;
 import ucarfurkan.todoapp.ToDoApp.Service.TodoService;
 
@@ -37,6 +34,20 @@ public class TodoController {
     public String postNewTodo(@ModelAttribute("todoText") String todoText){
         Todo todo = new Todo(todoText,false);
         todoService.addNewTodo(todo);
+        return "redirect:/todos";
+    }
+
+    @GetMapping("/todos/{id}")
+    public String deleteTodo(@PathVariable Long id){
+        todoService.deleteTodoById(id);
+        return "redirect:/todos";
+    }
+
+    @GetMapping("/todos/done/{id}")
+    public String updateTodo(@PathVariable Long id){
+        Todo existingTodo = todoService.getTodoById(id);
+        existingTodo.setIsDone(true);
+        todoService.updateTodo(existingTodo);
         return "redirect:/todos";
     }
 
