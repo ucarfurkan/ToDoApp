@@ -43,11 +43,20 @@ public class TodoController {
         return "redirect:/todos";
     }
 
+    @PostMapping("/todos/{id}")
+    public String updateTodo (@PathVariable Long id, @ModelAttribute("existingStudent") Todo todo, Model model){
+        Todo updatedTodo = todoService.getTodoById(id);
+        updatedTodo.setTodoText(todo.getTodoText());
+        updatedTodo.setIsDone(todo.isDone());
+        todoService.updateTodo(updatedTodo);
+        return "redirect:/todos";
+    }
+
     @GetMapping("/todos/update/{id}")
-    public String updateTodo(@PathVariable Long id, Model model){
+    public String editTodo(@PathVariable Long id, Model model){
         Todo existingTodo = todoService.getTodoById(id);
         model.addAttribute("existingTodo", existingTodo);
-        return "redirect:/todos";
+        return "edit_todo";
     }
 
     @GetMapping("/todos/done/{id}")
