@@ -13,8 +13,8 @@
  
  * Add new "to do" to application.
  
- ![https://media.giphy.com/media/Qi4SPFltUuGybkOcf8/giphy.gif]
- 
+![screen-recording (1)](https://user-images.githubusercontent.com/71367001/206155885-496d9868-3ea9-4281-85fc-aa09a2d6fbf8.gif)
+
  * Mark the existing "to do"s as **DONE**
  * View all the "to do"s that have been done
  * Update the existing "to do"s
