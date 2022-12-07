@@ -43,8 +43,15 @@ public class TodoController {
         return "redirect:/todos";
     }
 
+    @GetMapping("/todos/update/{id}")
+    public String updateTodo(@PathVariable Long id, Model model){
+        Todo existingTodo = todoService.getTodoById(id);
+        model.addAttribute("existingTodo", existingTodo);
+        return "redirect:/todos";
+    }
+
     @GetMapping("/todos/done/{id}")
-    public String updateTodo(@PathVariable Long id){
+    public String doneTodo(@PathVariable Long id){
         Todo existingTodo = todoService.getTodoById(id);
         existingTodo.setIsDone(true);
         todoService.updateTodo(existingTodo);
