@@ -61,15 +61,14 @@
         <p class="text-headline display-1 p-5 m-3 d-flex justify-content-center"><u>to do App</u></p>
     </div>
     <form th:action="@{/todos/{id} (id=${existingTodo.id})}" th:object = "${existingTodo}" method="POST"
-          class="d-flex justify-content-center mx-auto w-50">
-        <div class="mx-auto w-50">
-                <div class="input-group input-group-lg">
+          class="mx-auto w-100">
+                <div class="input-group input-group-lg mx-auto d-flex justify-content-center w-100">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-lg">To do:</span>
                     </div>
-                        <input type="text" name="todoText" th:field="*{todoText}">
+                        <input type="text" name="todoText" th:field="*{todoText}" class="w-25">
                         <button type="submit" class="btn btn-update ml-1 pl-4 pr-4">Update</button>
                 </div>
-        </div>
+
     </form>
 </body>
